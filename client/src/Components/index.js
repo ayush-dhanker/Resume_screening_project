@@ -1,0 +1,1 @@
+// animatable.x(100).y(200); // Animate x to 100 and y to 200 in 500ms
