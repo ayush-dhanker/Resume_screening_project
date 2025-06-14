@@ -1,10 +1,15 @@
 // import './Home.css';
 
+import Animation from "../components/Animation";
+
 function Home() {
     return (
         <div className="home">
-            <h1>Welcome to Our Job Portal</h1>
-            <p>Find your dream job today!</p>
+            <div>
+                <h1>Welcome to Our Job Portal</h1>
+                <p>Find your dream job today!</p>
+            </div>
+            <Animation />
         </div>
     );
 }

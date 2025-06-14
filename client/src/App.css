@@ -93,3 +93,9 @@
 }
 
 /* spinner end */
+
+/* Home page */
+.home {
+  display: flex;
+
+}

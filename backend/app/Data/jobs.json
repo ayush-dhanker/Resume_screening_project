@@ -1,0 +1,106 @@
+{
+    "jobs": [
+        {
+            "id": 1,
+            "title": "Machine Learning Engineer",
+            "company": "NeuralNova Technologies",
+            "location": "San Francisco, CA / Remote",
+            "salary": "$120,000 - $160,000",
+            "description": "Design and implement cutting-edge machine learning models to solve complex business challenges. Work with massive datasets and deploy scalable AI solutions to production environments.",
+            "level": "Senior",
+            "skills": [
+                "Python",
+                "TensorFlow",
+                "PyTorch",
+                "AWS SageMaker"
+            ],
+            "posted_date": "2023-11-15",
+            "type": "Full-time"
+        },
+        {
+            "id": 2,
+            "title": "AI Research Scientist",
+            "company": "DeepThought AI Labs",
+            "location": "London, UK / Hybrid",
+            "salary": "£90,000 - £130,000",
+            "description": "Pioneer innovative research in deep learning architectures and neurosymbolic AI systems. Lead white papers and contribute to open-source AI frameworks that push industry boundaries.",
+            "level": "PhD",
+            "skills": [
+                "Machine Learning Theory",
+                "Research Publications",
+                "Python",
+                "CUDA"
+            ],
+            "posted_date": "2023-11-10",
+            "type": "Full-time"
+        },
+        {
+            "id": 3,
+            "title": "Computer Vision Engineer",
+            "company": "OmniVision AI",
+            "location": "Remote (Global)",
+            "salary": "$100,000 - $140,000",
+            "description": "Develop advanced computer vision algorithms for real-time object detection and 3D scene reconstruction. Optimize vision models for edge devices and IoT applications.",
+            "level": "Mid-Level",
+            "skills": [
+                "OpenCV",
+                "Python",
+                "C++",
+                "ONNX Runtime"
+            ],
+            "posted_date": "2023-11-05",
+            "type": "Contract"
+        },
+        {
+            "id": 4,
+            "title": "NLP Data Scientist",
+            "company": "LinguaTech AI",
+            "location": "New York, NY",
+            "salary": "$110,000 - $150,000",
+            "description": "Build next-generation natural language processing systems leveraging transformer architectures. Develop multilingual text understanding and generation systems for enterprise applications.",
+            "level": "Senior",
+            "skills": [
+                "Transformer Models",
+                "Python",
+                "HuggingFace",
+                "Spark NLP"
+            ],
+            "posted_date": "2023-11-01",
+            "type": "Full-time"
+        },
+        {
+            "id": 5,
+            "title": "AI Product Manager",
+            "company": "Cognitive Horizon",
+            "location": "Austin, TX / Remote",
+            "salary": "$130,000 - $170,000",
+            "description": "Lead the strategic development of AI-powered products from concept to market launch. Bridge technical teams and business stakeholders to deliver impactful AI solutions across industries.",
+            "level": "Director",
+            "skills": [
+                "AI Product Strategy",
+                "Agile Development",
+                "Market Analysis",
+                "MLOps"
+            ],
+            "posted_date": "2023-10-28",
+            "type": "Full-time"
+        },
+        {
+            "id": 6,
+            "title": "AI Ethics Specialist",
+            "company": "Responsible AI Collective",
+            "location": "Remote (North America)",
+            "salary": "$95,000 - $125,000",
+            "description": "Develop frameworks for ethical AI implementation and algorithmic fairness. Conduct bias audits and establish responsible AI guidelines for enterprise deployments.",
+            "level": "Mid-Level",
+            "skills": [
+                "AI Ethics",
+                "Regulatory Compliance",
+                "Bias Detection",
+                "Stakeholder Management"
+            ],
+            "posted_date": "2023-10-25",
+            "type": "Full-time"
+        }
+    ]
+}

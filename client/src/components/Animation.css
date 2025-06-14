@@ -1,0 +1,66 @@
+/* .grid-container {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  gap: 8px;
+  width: fit-content;
+  margin: auto;
+  padding: 20px;
+}
+
+.square {
+  width: 40px;
+  height: 40px;
+  background-color: #white;
+  border-radius: 4px;
+  margin: 5px;
+} */
+
+.square:nth-child(6n+1) {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  /* Reddish-Pink */
+}
+
+.square:nth-child(6n+2) {
+  background: linear-gradient(135deg, #ff9a00, #ff6a00);
+  /* Orange */
+}
+
+.square:nth-child(6n+3) {
+  background: linear-gradient(135deg, #00c9ff, #92fe9d);
+  /* Aqua-Green */
+}
+
+.square:nth-child(6n+4) {
+  background: linear-gradient(135deg, #845ec2, #d65db1);
+  /* Purple-Pink */
+}
+
+.square:nth-child(6n+5) {
+  background: linear-gradient(135deg, #00f5d4, #00bbf9);
+  /* Mint-Blue */
+}
+
+.square:nth-child(6n+6) {
+  background: linear-gradient(135deg, #f15bb5, #ff9f1c);
+  /* Pink-Orange */
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  gap: 10px;
+  width: fit-content;
+  margin: auto;
+  padding: 40px;
+}
+
+.square {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  margin: 5px;
+  animation: pulse 2.5s infinite ease-in-out;
+  transition: transform 0.3s ease;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
