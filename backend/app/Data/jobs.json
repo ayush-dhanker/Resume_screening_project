@@ -102,5 +102,28 @@
             "posted_date": "2023-10-25",
             "type": "Full-time"
         }
+    ],
+    "teamMembers": [
+        {
+            "name": "Alice Smith",
+            "role": "Frontend Developer",
+            "photo": "https://via.placeholder.com/120",
+            "linkedin": "https://linkedin.com/in/alicesmith",
+            "github": "https://github.com/alicesmith"
+        },
+        {
+            "name": "Bob Johnson",
+            "role": "Backend Developer",
+            "photo": "https://via.placeholder.com/120",
+            "linkedin": "https://linkedin.com/in/bobjohnson",
+            "github": "https://github.com/bobjohnson"
+        },
+        {
+            "name": "Carol Lee",
+            "role": "UI/UX Designer",
+            "photo": "https://via.placeholder.com/120",
+            "linkedin": "https://linkedin.com/in/carollee",
+            "github": "https://github.com/carollee"
+        }
     ]
 }

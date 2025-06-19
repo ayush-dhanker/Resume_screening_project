@@ -9,7 +9,7 @@ function Home() {
                 <h1>Welcome to Our Job Portal</h1>
                 <p>Find your dream job today!</p>
             </div>
-            <Animation />
+            {/* <Animation /> */}
         </div>
     );
 }
