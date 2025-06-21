@@ -1,6 +1,19 @@
 import './About.css';
 import React from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
+import ProfileCard from '../components/ProfileCard';
+
+{/* <ProfileCard
+  name="Javi A. Torres"
+  title="Software Engineer"
+  handle="javicodes"
+  status="Online"
+  contactText="Contact Me"
+  avatarUrl="/path/to/avatar.jpg"
+  showUserInfo={true}
+  enableTilt={true}
+  onContactClick={() => console.log('Contact clicked')}
+/> */}
 
 const teamMembers = [
     {
@@ -37,19 +50,19 @@ function About() {
 
             <div className="team-container">
                 {teamMembers.map((member, index) => (
-                    <div className="team-card" key={index}>
-                        <img src={member.photo} alt={member.name} className="profile-photo" />
-                        <h3>{member.name}</h3>
-                        <p>{member.role}</p>
-                        <div className="social-icons">
-                            <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
-                                <FaLinkedin />
-                            </a>
-                            <a href={member.github} target="_blank" rel="noopener noreferrer">
-                                <FaGithub />
-                            </a>
-                        </div>
-                    </div>
+
+                    <ProfileCard key={index}
+                        name="Javi A. Torres"
+                        title="Software Engineer"
+                        handle="javicodes"
+                        status="Online"
+                        contactText="Contact Me"
+                        avatarUrl="/path/to/avatar.jpg"
+                        showUserInfo={true}
+                        enableTilt={true}
+                        onContactClick={() => console.log('Contact clicked')}
+                    />
+
                 ))}
             </div>
         </section>
