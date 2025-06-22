@@ -27,7 +27,9 @@
 .job-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 20px;
+
 }
 
 /* Spinner */
@@ -96,6 +98,24 @@
 
 /* Home page */
 .home {
-  display: flex;
+  padding: 50px 20px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.6);
 
+}
+
+.comp-1 {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  text-align: left;
+  margin: auto;
+  gap: 20px;
+}
+
+.comp-1 h2 p div {
+  font-size: 25x;
+  font-weight: 500;
+  margin-bottom: 0px;
+  color: #333;
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-function JobDetailModel({ job, modal, toggle }) {
+function JobDetailModel({ job, modal, toggle, items }) {
 
     return (
         <div>
@@ -17,7 +17,7 @@ function JobDetailModel({ job, modal, toggle }) {
                     culpa qui officia deserunt mollit anim id est laborum.
                 </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" onClick={toggle} href={`/apply/${job.id}`} type='a'>
+                    <Button onClick={toggle} href={`/apply/${job.id}`} type='a' style={{ background: items }}>
                         Apply Now
                     </Button>{' '}
                     <Button color="secondary" onClick={toggle}>
