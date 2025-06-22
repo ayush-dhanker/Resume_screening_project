@@ -5,8 +5,21 @@ from typing import Annotated, List, Dict, Optional
 from fastapi.responses import JSONResponse
 from datetime import date, datetime, timezone
 from models import Job, Applicant, TeamMember
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+origins = [
+    "http://localhost:3000",  # React dev server
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,      # or ["*"] to allow all
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 data = load_data()
 

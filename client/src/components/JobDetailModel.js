@@ -6,18 +6,25 @@ function JobDetailModel({ job, modal, toggle, items }) {
     return (
         <div>
             <Modal isOpen={modal} toggle={toggle} >
-                <ModalHeader toggle={toggle}>{job.title}</ModalHeader>
+                <ModalHeader toggle={toggle}>
+                    <h2>{job.title}</h2>
+                    <p><strong>{job.company}</strong> – {job.location}</p>
+                </ModalHeader>
                 <ModalBody>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in
-                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.
+                    <p><strong>Level:</strong> {job.level}</p>
+                    <p><strong>Type:</strong> {job.type}</p>
+                    <p><strong>Salary:</strong> {job.salary}</p>
+                    <p><strong>Posted:</strong> {job.posted_date}</p>
+                    <p style={{ marginTop: "15px" }}>{job.description}</p>
+                    <div style={{ marginTop: "15px" }}>
+                        <strong>Skills:</strong><br />
+                        {job.skills.map((skill, idx) => (
+                            <span key={idx} className='skillBadge'>{skill}</span>
+                        ))}
+                    </div>
                 </ModalBody>
                 <ModalFooter>
-                    <Button onClick={toggle} href={`/apply/${job.id}`} type='a' style={{ background: items }}>
+                    <Button onClick={toggle} href={`/apply/${job.id}`} color='primary' type='a' style={{ background: items }}>
                         Apply Now
                     </Button>{' '}
                     <Button color="secondary" onClick={toggle}>

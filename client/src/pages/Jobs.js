@@ -6,6 +6,12 @@ import { Container } from 'reactstrap';
 import DecryptedText from '../Animation/DecryptedText'
 
 function Jobs() {
+
+    useEffect(() => {
+        fetch("http://localhost:8000/jobs")
+            .then(res => res.json())
+            .then(data => console.log(data));
+    }, []);
     const [jobs, setJobs] = useState([]);
     const [loading, setLoading] = useState(true);
 

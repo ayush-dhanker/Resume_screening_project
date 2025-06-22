@@ -16,40 +16,31 @@ function JobCard({ job }) {
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
     return (
-        // <div className='jobCard-style'>
-        <div>
-            <Card
-                body
-                className="my-2"
-                style={{
-                    maxWidth: '18rem'
-                }}
-            >
-                <CardTitle tag="h5">
-                    Special Title Treatment
-                </CardTitle>
-                <CardText>
-                    With supporting text below as a natural lead-in to additional content.
-                </CardText>
-                <Button onClick={toggle} id={`job-${job.id}`} color="primary" className='.apply-button' >
-                    Go somewhere
-                </Button>
-            </Card>
-            <JobDetailModel job={job} modal={modal} toggle={toggle} />
-        </div>
-
-        /* <div>
-            <UncontrolledCollapse toggler={`job-${job.id}`}>
-                <Card>
-                    <CardBody>
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-                        terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
-                        labore wes anderson cred nesciunt sapiente ea proident.
-                    </CardBody>
+        <div className='jobCard-style'>
+            <div>
+                <Card
+                    body
+                    className="my-2"
+                    style={{
+                        maxWidth: '18rem'
+                    }}
+                >
+                    <CardTitle tag="h4" >
+                        <p style={{ fontWeight: 600, textAlign: 'center' }}>{job.title}</p>
+                    </CardTitle>
+                    <div className='card-text'>
+                        <p><strong>Company:</strong> {job.company}</p>
+                        <p><strong>Location:</strong> {job.location}</p>
+                        <p><strong>Salary:</strong> {job.salary}</p>
+                    </div>
+                    <Button onClick={toggle} id={`job-${job.id}`} color="primary" className='.apply-button' >
+                        More Details
+                    </Button>
                 </Card>
-            </UncontrolledCollapse>
-        </div> */
-        // </div >
+                <JobDetailModel job={job} modal={modal} toggle={toggle} />
+            </div>
+
+        </div >
         // <div className="job-card">
         //     <h3>{job.title}</h3>
         //     <p><strong>Company:</strong> {job.company}</p>

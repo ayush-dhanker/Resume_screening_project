@@ -7,6 +7,7 @@ import DecryptedText from "../Animation/DecryptedText";
 import { FaHandPointRight } from "react-icons/fa";
 import VariableProximity from "../Animation/VariableProximity";
 import { useRef } from 'react';
+import { Button } from "reactstrap";
 
 function Home() {
     const containerRef = useRef(null);
@@ -29,15 +30,7 @@ function Home() {
                             textAlign="center"
                         // onLetterAnimationComplete={handleAnimationComplete}
                         />
-                        {/* <TrueFocus
-                            sentence="Human Centered"
-                            manualMode={false}
-                            blurAmount={5}
-                            borderColor="red"
-                            animationDuration={2}
-                            pauseBetweenAnimations={1}
-                        />
-                        AI */}
+                        <Button color="primary" outline>Download Report</Button>
                     </h2>
                     <p style={{ textAlign: 'right' }}><TrueFocus
                         sentence="Research Question"
