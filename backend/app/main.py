@@ -6,6 +6,7 @@ from fastapi.responses import JSONResponse
 from datetime import date, datetime, timezone
 from models import Job, Applicant, TeamMember
 from fastapi.middleware.cors import CORSMiddleware
+import json
 
 app = FastAPI()
 
@@ -80,17 +81,32 @@ def about_section():
     return JSONResponse(content=members, status_code=200)
 
 
-# @app.post('/jobs/{id}')
-# def add_applicant(applicant: Applicant):
-#     # send the resume to the model
+@app.post('/jobs/{id}')
+async def submit_application(
+    name: str = Form(...),
+    job: str = Form(...),  # JSON stringified object from frontend
+    resume: UploadFile = File(...)
+):
+    resume_content = await resume.read()
 
-#     # can show this thing to new path
-#     # if threshold satisfies
+    # Parse the job JSON
+    try:
+        job_data = json.loads(job)
+    except json.JSONDecodeError:
+        return {"error": "Invalid job format"}
 
-#         # i. add data and resume into db
+    job_text = job_data.get("text", "")
+    required_skills = job_data.get("required_skills", [])
+    education = job_data.get("education", {})
 
-#         # ii. send response
+    # Call your evaluation function
+    match_score = evaluate_resume(
+        resume_content.decode(), job_text, required_skills, education)
 
-#     # If not
-
-#         #i. send the reason
+    return {
+        "message": "Application submitted",
+        "match_score": match_score,
+        "applicant": {
+            "name": name
+        }
+    }

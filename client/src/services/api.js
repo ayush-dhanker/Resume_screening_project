@@ -62,23 +62,47 @@ export const fetchJobById = async (id) => {
     }
 };
 
-export const submitApplication = async (jobId, formData) => {
+export const submitApplication = async (job, formData) => {
     try {
-        // In a real app:
-        // const response = await axios.post(`${API_BASE_URL}/applications`, {
-        //   jobId,
-        //   ...formData
-        // });
-        // return response.data;
+        const payload = new FormData();
 
-        // Mock implementation:
-        return new Promise(resolve => {
-            setTimeout(() => resolve({ success: true }), 1000);
-        });
+        // Construct simplified job structure
+        const simplifiedJob = {
+            text: job.description,
+            required_skills: job.skills,
+            education: job.education
+        };
+
+        payload.append('name', formData.name);
+        payload.append('job', JSON.stringify(simplifiedJob)); // Send as JSON string
+        payload.append('resume', formData.resume);
+
+        const response = await axios.post(
+            `${API_BASE_URL}/api/applications`,
+            payload,
+            {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                },
+                onUploadProgress: progressEvent => {
+                    const progress = Math.round(
+                        (progressEvent.loaded * 100) / progressEvent.total
+                    );
+                    console.log(`Upload progress: ${progress}%`);
+                }
+            }
+        );
+
+        return response.data;
+
     } catch (error) {
-        throw error;
+        const errorMessage = error.response?.data?.message ||
+            error.message ||
+            'Failed to submit application';
+        throw new Error(errorMessage);
     }
 };
+
 
 export const fetchTeamMeambers = async (id) => {
     try {

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Modal, ModalHeader, ModalBody } from 'reactstrap';
 import './ApplicationResponse.css';
+import { submitApplication } from '../services/api';
 
 const MESSAGES = {
     accepted: {

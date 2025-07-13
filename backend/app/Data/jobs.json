@@ -23,6 +23,19 @@
                 "Model Optimization",
                 "Distributed Training"
             ],
+            "education": {
+                "min_degree": "Master",
+                "fields": [
+                    "Computer Science",
+                    "Data Science",
+                    "Statistics",
+                    "Electrical Engineering"
+                ],
+                "preferred_certifications": [
+                    "AWS Certified ML Specialty",
+                    "TensorFlow Developer Certificate"
+                ]
+            },
             "posted_date": "2023-11-15",
             "type": "Full-time"
         },
@@ -48,6 +61,16 @@
                 "Neurosymbolic AI",
                 "Graph Neural Networks"
             ],
+            "education": {
+                "min_degree": "PhD",
+                "fields": [
+                    "Computer Science",
+                    "Mathematics",
+                    "Physics",
+                    "Cognitive Science"
+                ],
+                "required_publications": 3
+            },
             "posted_date": "2023-11-10",
             "type": "Full-time"
         },
@@ -73,6 +96,19 @@
                 "SLAM Algorithms",
                 "Edge AI Deployment"
             ],
+            "education": {
+                "min_degree": "Bachelor",
+                "fields": [
+                    "Computer Engineering",
+                    "Electrical Engineering",
+                    "Robotics"
+                ],
+                "preferred_courses": [
+                    "Digital Image Processing",
+                    "Computer Vision",
+                    "Embedded Systems"
+                ]
+            },
             "posted_date": "2023-11-05",
             "type": "Contract"
         },
@@ -98,6 +134,18 @@
                 "Knowledge Graphs",
                 "Speech Processing"
             ],
+            "education": {
+                "min_degree": "Master",
+                "fields": [
+                    "Computational Linguistics",
+                    "Computer Science",
+                    "Cognitive Science"
+                ],
+                "language_requirements": [
+                    "English",
+                    "Plus one of: Spanish, Mandarin, or Arabic"
+                ]
+            },
             "posted_date": "2023-11-01",
             "type": "Full-time"
         },
@@ -122,6 +170,15 @@
                 "AI Ethics Compliance",
                 "Cloud Cost Optimization"
             ],
+            "education": {
+                "min_degree": "Bachelor",
+                "fields": [
+                    "Business Administration",
+                    "Computer Science",
+                    "Data Science"
+                ],
+                "preferred_experience": "5+ years in AI/ML product management"
+            },
             "posted_date": "2023-10-28",
             "type": "Full-time"
         },
@@ -146,6 +203,19 @@
                 "Policy Development",
                 "Transparency Reporting"
             ],
+            "education": {
+                "min_degree": "Master",
+                "fields": [
+                    "Ethics",
+                    "Law",
+                    "Social Sciences",
+                    "Computer Science"
+                ],
+                "required_courses": [
+                    "Ethics of Technology",
+                    "Data Privacy Law"
+                ]
+            },
             "posted_date": "2023-10-25",
             "type": "Full-time"
         }
