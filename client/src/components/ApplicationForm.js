@@ -1,8 +1,20 @@
 import { useState } from 'react';
 import './ApplicationForm.css';
 import { Form, FormGroup, FormText, Input, Label, Button } from 'reactstrap';
+import ApplicationResponse from './ApplicationResponse';
 
 function ApplicationForm({ job }) {
+    const [modal, setModal] = useState(false);
+
+    //remove this after  
+    const [status, setStatus] = useState(null);
+    const handleReview = () => {
+        // Simulate backend logic (replace with real API logic)
+        const isAccepted = Math.random() > 0.5; // Random acceptance/rejection
+        setStatus(isAccepted ? 'accepted' : 'rejected');
+    };
+
+    const toggle = () => setModal(!modal);
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -27,42 +39,43 @@ function ApplicationForm({ job }) {
 
     return (
         // submitting feature remaining
-        <Form className='application-form' >
-            <h2 style={{ 'marginBottom': '22px', 'textDecoration': 'underline', color: 'rgba(33, 37, 41, 1)' }}>Apply for: {job.title}</h2>
-            <FormGroup>
-                <Label for="your-name">
-                    Name
-                </Label>
-                <Input
-                    id="your-name"
-                    name="name"
-                    placeholder="..."
-                    type="string"
-                />
-            </FormGroup>
-            <FormGroup>
-                <Label for="your-exp">
-                    Experience
-                </Label>
-                <Input
-                    id="your-exp"
-                    name="experience"
-                    placeholder="..."
-                    type="number"
-                />
-            </FormGroup>
-            <FormGroup>
-                <Label for="your-email">
-                    Email
-                </Label>
-                <Input
-                    id="your-email"
-                    name="email"
-                    placeholder="..."
-                    type="email"
-                />
-            </FormGroup>
-            {/* <FormGroup>
+        <div>
+            <Form className='application-form' >
+                <h2 style={{ 'marginBottom': '22px', 'textDecoration': 'underline', color: 'rgba(33, 37, 41, 1)' }}>Apply for: {job.title}</h2>
+                <FormGroup>
+                    <Label for="your-name">
+                        Name
+                    </Label>
+                    <Input
+                        id="your-name"
+                        name="name"
+                        placeholder="..."
+                        type="string"
+                    />
+                </FormGroup>
+                <FormGroup>
+                    <Label for="your-exp">
+                        Experience
+                    </Label>
+                    <Input
+                        id="your-exp"
+                        name="experience"
+                        placeholder="..."
+                        type="number"
+                    />
+                </FormGroup>
+                <FormGroup>
+                    <Label for="your-email">
+                        Email
+                    </Label>
+                    <Input
+                        id="your-email"
+                        name="email"
+                        placeholder="..."
+                        type="email"
+                    />
+                </FormGroup>
+                {/* <FormGroup>
                 <Label for="exampleText">
                     CoverLetter
                 </Label>
@@ -72,20 +85,25 @@ function ApplicationForm({ job }) {
                     type="textarea"
                 />
             </FormGroup> */}
-            <FormGroup>
-                <Label for="exampleFile">
-                    Upload Resume (PDF/Docs)
-                </Label>
-                <Input
-                    id="exampleFile"
-                    name="file"
-                    type="file"
-                />
-            </FormGroup>
-            <Button>
-                Submit
-            </Button>
-        </Form>
+                <FormGroup>
+                    <Label for="exampleFile">
+                        Upload Resume (PDF/Docs)
+                    </Label>
+                    <Input
+                        id="exampleFile"
+                        name="file"
+                        type="file"
+                    />
+                </FormGroup>
+                <Button onClick={() => {
+                    toggle();
+                    handleReview();
+                }}>
+                    Submit
+                </Button>
+            </Form>
+            <ApplicationResponse modal={modal} toggle={toggle} handleReview={handleReview} status={status} />
+        </div>
         // <div className="application-form">
         //     <h2>Apply for: {job.title}</h2>
         //     <form c>

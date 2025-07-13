@@ -22,7 +22,7 @@ function JobCard({ job }) {
                     body
                     className="my-2"
                     style={{
-                        maxWidth: '18rem'
+                        width: '24rem'
                     }}
                 >
                     <CardTitle tag="h4" >

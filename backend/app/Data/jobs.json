@@ -12,7 +12,16 @@
                 "Python",
                 "TensorFlow",
                 "PyTorch",
-                "AWS SageMaker"
+                "AWS SageMaker",
+                "Scikit-learn",
+                "Keras",
+                "MLflow",
+                "Docker",
+                "Kubernetes",
+                "Data Pipelines",
+                "Feature Engineering",
+                "Model Optimization",
+                "Distributed Training"
             ],
             "posted_date": "2023-11-15",
             "type": "Full-time"
@@ -29,7 +38,15 @@
                 "Machine Learning Theory",
                 "Research Publications",
                 "Python",
-                "CUDA"
+                "CUDA",
+                "Mathematical Optimization",
+                "Reinforcement Learning",
+                "LaTeX",
+                "JAX",
+                "Academic Writing",
+                "Experimental Design",
+                "Neurosymbolic AI",
+                "Graph Neural Networks"
             ],
             "posted_date": "2023-11-10",
             "type": "Full-time"
@@ -46,7 +63,15 @@
                 "OpenCV",
                 "Python",
                 "C++",
-                "ONNX Runtime"
+                "ONNX Runtime",
+                "YOLO/SSD",
+                "3D Vision (PCL, Open3D)",
+                "ROS (Robotics)",
+                "TensorRT",
+                "Image Processing",
+                "Video Analytics",
+                "SLAM Algorithms",
+                "Edge AI Deployment"
             ],
             "posted_date": "2023-11-05",
             "type": "Contract"
@@ -63,7 +88,15 @@
                 "Transformer Models",
                 "Python",
                 "HuggingFace",
-                "Spark NLP"
+                "Spark NLP",
+                "LLM Fine-tuning",
+                "LangChain",
+                "Vector Databases",
+                "Text Mining",
+                "Semantic Search",
+                "Multilingual NLP",
+                "Knowledge Graphs",
+                "Speech Processing"
             ],
             "posted_date": "2023-11-01",
             "type": "Full-time"
@@ -80,7 +113,14 @@
                 "AI Product Strategy",
                 "Agile Development",
                 "Market Analysis",
-                "MLOps"
+                "MLOps",
+                "Roadmapping",
+                "User Story Mapping",
+                "A/B Testing",
+                "Technical Documentation",
+                "Stakeholder Alignment",
+                "AI Ethics Compliance",
+                "Cloud Cost Optimization"
             ],
             "posted_date": "2023-10-28",
             "type": "Full-time"
@@ -97,7 +137,14 @@
                 "AI Ethics",
                 "Regulatory Compliance",
                 "Bias Detection",
-                "Stakeholder Management"
+                "Stakeholder Management",
+                "EU AI Act/GDPR",
+                "Explainable AI",
+                "Audit Frameworks",
+                "Diversity Metrics",
+                "Impact Assessments",
+                "Policy Development",
+                "Transparency Reporting"
             ],
             "posted_date": "2023-10-25",
             "type": "Full-time"
@@ -105,25 +152,32 @@
     ],
     "teamMembers": [
         {
-            "name": "Alice Smith",
-            "role": "Frontend Developer",
-            "photo": "https://via.placeholder.com/120",
-            "linkedin": "https://linkedin.com/in/alicesmith",
-            "github": "https://github.com/alicesmith"
+            "name": "Ayush Dhanker",
+            "role": "Data and Knowledge Engineering",
+            "photo": "https://media.licdn.com/dms/image/v2/D4D03AQElyucIGlvOiQ/profile-displayphoto-shrink_800_800/B4DZZn2lG1G4Ac-/0/1745499083824?e=1757548800&v=beta&t=UaB0lKbVxk_tVGP-XFF9nXK-iqTg4LDWz8RXo8wAcCU",
+            "linkedin": "https://www.linkedin.com/in/ayush-dhanker/",
+            "github": "https://github.com/ayush-dhanker"
         },
         {
-            "name": "Bob Johnson",
-            "role": "Backend Developer",
-            "photo": "https://via.placeholder.com/120",
-            "linkedin": "https://linkedin.com/in/bobjohnson",
-            "github": "https://github.com/bobjohnson"
+            "name": "Dhruvi Swadia",
+            "role": "Data and Knowledge Engineering",
+            "photo": "https://media.licdn.com/dms/image/v2/D4D03AQHcX6GL4r8RcQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1698927767348?e=1757548800&v=beta&t=UvnlBGefQIFD6s4UtOrcdJQ8SKRMwNBtSaFtJ9UYC_E",
+            "linkedin": "https://www.linkedin.com/in/dhruvi-swadia/",
+            "github": "https://github.com/dhruvisw"
         },
         {
-            "name": "Carol Lee",
-            "role": "UI/UX Designer",
-            "photo": "https://via.placeholder.com/120",
-            "linkedin": "https://linkedin.com/in/carollee",
-            "github": "https://github.com/carollee"
+            "name": "Nandini Malviya",
+            "role": "Data and Knowledge Engineering",
+            "photo": "https://media.licdn.com/dms/image/v2/D4D03AQFxeZ2RG8exIQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1678471599456?e=1757548800&v=beta&t=P3qAJQ7kDpnV9givFcrBh4mK_oaC82lRBrORHYrFoec",
+            "linkedin": "https://www.linkedin.com/in/nandini-malviya/",
+            "github": "https://github.com/Nandini0401"
+        },
+        {
+            "name": "Chaitanya Kewadkar",
+            "role": "Data and Knowledge Engineering",
+            "photo": "https://media.licdn.com/dms/image/v2/D4D35AQHADvE4TEhPFA/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1726306215065?e=1752660000&v=beta&t=5qIlWkZ1HItKzpVWsJIUYHolCNIArS6k6sOG2cmzkw4",
+            "linkedin": "https://www.linkedin.com/in/chaitanyakew/",
+            "github": "https://github.com/chaitanyakew"
         }
     ]
 }

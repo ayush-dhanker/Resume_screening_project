@@ -1,5 +1,5 @@
 from fastapi import FastAPI, UploadFile, HTTPException
-from loadData import load_data
+from loadData import load_data, job_by_id
 # from pydantic import BaseModel, EmailStr, Field, AnyUrl
 from typing import Annotated, List, Dict, Optional
 from fastapi.responses import JSONResponse
@@ -56,6 +56,20 @@ def listed_jobs():
         raise HTTPException(
             status_code=404, detail="No Jobs Found at the moment")
     return JSONResponse(content=jobs, status_code=200)
+
+
+@app.get('/jobs/{id}', response_model=Job)
+def get_job_by_id(id: int):
+    jobs = data["jobs"]
+
+    for job in jobs:
+        if job["id"] == id:
+            return JSONResponse(content=job, status_code=200)
+
+    raise HTTPException(
+        status_code=404,
+        detail=f"Job with ID {id} not found"
+    )
 
 
 @app.get('/about', response_model=List[TeamMember])

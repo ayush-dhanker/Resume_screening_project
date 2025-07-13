@@ -41,14 +41,10 @@ const API_BASE_URL = 'http://localhost:8000';
 
 export const fetchJobs = async () => {
     try {
-        // In a real app:
         const response = await axios.get(`${API_BASE_URL}/jobs`);
+        console.log(response.data)
         return response.data;
 
-        // Mock implementation:
-        // return new Promise(resolve => {
-        //     setTimeout(() => resolve(mockJobs), 500);
-        // });
     } catch (error) {
         throw error;
     }
@@ -58,19 +54,9 @@ export const fetchJobById = async (id) => {
     try {
         // In a real app:
         const response = await axios.get(`${API_BASE_URL}/jobs/${id}`);
+        console.log(response.data)
         return response.data;
 
-        // Mock implementation:
-        // return new Promise((resolve, reject) => {
-        //     setTimeout(() => {
-        //         const job = mockJobs.find(job => job.id === id);
-        //         if (job) {
-        //             resolve(job);
-        //         } else {
-        //             reject(new Error('Job not found'));
-        //         }
-        //     }, 500);
-        // });
     } catch (error) {
         throw error;
     }
@@ -89,6 +75,17 @@ export const submitApplication = async (jobId, formData) => {
         return new Promise(resolve => {
             setTimeout(() => resolve({ success: true }), 1000);
         });
+    } catch (error) {
+        throw error;
+    }
+};
+
+export const fetchTeamMeambers = async (id) => {
+    try {
+        const response = await axios.get(`${API_BASE_URL}/about`);
+        console.log(response.data)
+        return response.data;
+
     } catch (error) {
         throw error;
     }

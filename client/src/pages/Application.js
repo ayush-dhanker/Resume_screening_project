@@ -17,7 +17,9 @@ function Application() {
             } catch (error) {
                 console.error('Error fetching job:', error);
             } finally {
-                setLoading(false);
+                setTimeout(() => {
+                    setLoading(false);
+                }, 500);
             }
         };
         getJob();
