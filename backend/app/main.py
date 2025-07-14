@@ -1,17 +1,18 @@
-# from your_module import evaluate_resume  # Import your scoring function
+
 from fastapi import FastAPI, UploadFile, File, Form
 from typing import Dict
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 import json
 from fastapi import FastAPI, UploadFile, HTTPException, File, Form
 from loadData import load_data, job_by_id
-# from pydantic import BaseModel, EmailStr, Field, AnyUrl
+
 from typing import Annotated, List, Dict, Optional
 from fastapi.responses import JSONResponse
 from datetime import date, datetime, timezone
 from models import Job, Applicant, TeamMember
 from fastapi.middleware.cors import CORSMiddleware
-from backend.model import evaluate_resume
+
+from backend.model2 import evaluate_resume
 
 app = FastAPI()
 
@@ -19,17 +20,10 @@ origins = [
     "http://localhost:3000",
 ]
 
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=origins,
-#     allow_credentials=True,
-#     allow_methods=["*"],
-#     allow_headers=["*"],
-# )
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # or ["*"] to allow all
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -106,68 +100,8 @@ async def submit_application(
     except json.JSONDecodeError:
         return JSONResponse(status_code=400, content={"status": "error", "message": "Invalid job format"})
 
-    # Read resume bytes
-    resume_content = await resume.read()
-
-    # Call your evaluate_resume function (which should accept bytes and job_data)
-    result = evaluate_resume(resume_content, job_data)
+    content = await resume.read()
+    filename = resume.filename
+    result = evaluate_resume(content, filename, job_data)
 
     return JSONResponse(content=result)
-
-
-# @app.post('/apply/{job_id}')
-# async def submit_application(
-#     # job_id: str,
-#     name: str = Form(...),
-#     job_description: str = Form(...),  # Receive as JSON string
-#     resume: UploadFile = File(...)
-# ) -> Dict:
-#     """
-#     Process job applications with resume scoring
-
-#     Args:
-#         job_id: Unique job posting ID
-#         name: Applicant name
-#         job_description: JSON string containing:
-#             {
-#                 "text": "job description text",
-#                 "required_skills": ["Python", "SQL"],
-#                 "education": {"min_degree": "Master"}
-#             }
-#         resume: Uploaded resume file (PDF/DOCX)
-
-#     Returns:
-#         Application evaluation results with match score
-#     """
-#     try:
-#         # 1. Validate and parse job description
-#         try:
-#             job_data = json.loads(job_description)
-#         except json.JSONDecodeError as e:
-#             raise HTTPException(
-#                 status_code=422,
-#                 detail=f"Invalid job description format: {str(e)}"
-#             )
-
-#         # 2. Process resume file
-#         if not resume.filename.lower().endswith(('.pdf', '.docx')):
-#             raise HTTPException(
-#                 status_code=400,
-#                 detail="Only PDF and DOCX files are allowed"
-#             )
-
-#         resume_content = await resume.read()
-
-#         # 3. Evaluate resume (implement your logic)
-#         result = evaluate_resume(
-#             resume_content=resume_content,
-#             job_data=job_data
-#         )
-
-#         # 4. Format response
-#         return json.load(result)
-#     except Exception as e:
-#         raise HTTPException(
-#             status_code=500,
-#             detail=f"Processing failed: {str(e)}"
-#         )

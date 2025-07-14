@@ -1,8 +1,8 @@
+
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
 import os
+
 import spacy
 from transformers import BertTokenizer, BertModel
 import torch
@@ -10,18 +10,19 @@ import PyPDF2
 import docx
 import re
 from sklearn.metrics.pairwise import cosine_similarity
-from resumeClass import ResumeProcessor
-from resumeScoring import ResumeScorer
-from responseGenration import reportGenerator
+# from app.backend.ResumeProcessor import ResumeProcessor
+from backend.ResumeProcessor import ResumeProcessor
+from backend.ResumeScorer import ResumeScorer
+from backend.reportGenerator import reportGenerator
 
 
-def evaluate_resume(resume_path, job_description):
+def evaluate_resume(resume_path, fileName, job_description):
     processor = ResumeProcessor()
     scorer = ResumeScorer(job_description)
     report_generator = reportGenerator()
 
     try:
-        resume_content = processor.text_extract(resume_path)
+        resume_content = processor.text_extract(resume_path, fileName)
         features = processor.feature_extract(resume_content)
         scores = scorer.calculate_scores(features, resume_content)
 

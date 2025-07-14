@@ -442,22 +442,3 @@ def evaluate_resume(resume_path, job_description):
             "status": "error",
             "message": f"Processing failed: {str(e)}"
         }
-
-# Example usage
-# job_description = {
-#     "text": "We are looking for a Data Scientist with strong Python skills, "
-#             "experience with machine learning libraries, and proficiency in "
-#             "data visualization tools like Tableau or PowerBI. "
-#             "A Master's degree in Computer Science or related field is preferred.",
-#     "required_skills": [
-#         "Python", "Machine Learning", "Tableau", "SQL", "Pandas", "Scikit-learn"
-#     ],
-#     "education": {
-#         "min_degree": "Master",
-#         "fields": ["Computer Science", "Data Science", "Statistics"]
-#     }
-# }
-
-
-# result = evaluate_resume("/content/resume.pdf", job_description)
-# evaluate_resume(resume, job_description)

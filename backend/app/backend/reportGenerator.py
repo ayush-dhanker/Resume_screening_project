@@ -7,7 +7,6 @@ class reportGenerator:
         }
 
     def generate_rejection_feedback(self, candidate, min_accept_score):
-        """Generate feedback for rejected candidates"""
         feedback = []
 
         feedback.append(

@@ -1,4 +1,17 @@
 
+
+from transformers import BertTokenizer, BertModel
+import torch
+import PyPDF2
+import docx
+import re
+from sklearn.metrics.pairwise import cosine_similarity
+import pandas as pd
+import numpy as np
+from sklearn.metrics.pairwise import cosine_similarity
+from backend.ResumeProcessor import ResumeProcessor
+
+
 class ResumeScorer:
     def __init__(self, job_description):
         self.job_desc = job_description
@@ -46,31 +59,25 @@ class ResumeScorer:
         return min(score, 1.0)
 
     def calc_skill(self, candidate_skills):
-        # Normalize and compare candidate skills against required ones
 
         required = set(skill.lower()
                        for skill in self.job_desc.get("required_skills", []))
         candidate = set(skill.lower() for skill in candidate_skills)
 
-        # Expand both sets to include transferable/related skills
         expanded_required = self.processor.transferable_work(required)
         expanded_candidate = self.processor.transferable_work(candidate)
 
-        # Direct skill matches
         exact_matches = required & candidate
 
-        # Transferable skill matches (excluding direct ones)
         fuzzy_matches = (set(expanded_required) & set(
             expanded_candidate)) - exact_matches
 
-        # Scoring logic: full point for exact match, half for transferable
+
         match_score = len(exact_matches) + 0.5 * len(fuzzy_matches)
 
-        # Normalize by required skill count (avoid divide-by-zero)
         if required:
             match_score /= len(required)
 
-        # Final score capped at 1.0
         return round(min(match_score, 1.0), 3)
 
     def exp_marks(self, experience_sections):

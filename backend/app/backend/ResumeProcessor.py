@@ -1,3 +1,17 @@
+import pandas as pd
+import numpy as np
+import os
+from io import BytesIO
+
+import spacy
+from transformers import BertTokenizer, BertModel
+import torch
+import PyPDF2
+import docx
+import re
+from sklearn.metrics.pairwise import cosine_similarity
+
+
 class ResumeProcessor:
     def __init__(self):
 
@@ -100,33 +114,32 @@ class ResumeProcessor:
         for pattern in degree_patterns + domain_patrn:
             self.matcher.add("EDUCATION", [pattern])
 
-    def text_extract(self, file_path):
+    def text_extract(self, file_bytes, filename):
         text = ""
-
         try:
-            if file_path.lower().endswith('.pdf'):
-                with open(file_path, 'rb') as f:
-                    reader = PyPDF2.PdfReader(f)
-                    text = " ".join([
-                        page.text_extract() or ""
-                        for page in reader.pages
-                    ])
-            elif file_path.lower().endswith('.docx'):
-                doc = docx.Document(file_path)
+            if filename.lower().endswith('.pdf'):
+                reader = PyPDF2.PdfReader(BytesIO(file_bytes))
+                text = " ".join([
+                    page.extract_text() or ""
+                    for page in reader.pages
+                ])
+
+            elif filename.lower().endswith('.docx'):
+                doc = docx.Document(BytesIO(file_bytes))
                 text = " ".join([
                     para.text
                     for para in doc.paragraphs
                     if para.text.strip()
                 ])
+
             else:
                 raise ValueError(
-                    f"Unsupported file format: {file_path.split('.')[-1]}")
+                    f"Unsupported file format: {filename.split('.')[-1]}")
+
         except Exception as e:
-            print(f"Error processing {file_path}: {str(e)}")
+            print(f"Error processing {filename}: {str(e)}")
             return ""
 
-        # Clean extracted text
-        text = re.sub(r'\s+', ' ', text).strip()
         return text
 
     def get_embedding(self, text):
@@ -143,7 +156,7 @@ class ResumeProcessor:
             return outputs.last_hidden_state.mean(dim=1).squeeze().numpy()
         except Exception as e:
             print(f"Error generating BERT embedding: {str(e)}")
-            return np.zeros(768)  # Return zero vector if error occurs
+            return np.zeros(768)
 
     def feature_extract(self, resume_text):
         if not resume_text.strip():
