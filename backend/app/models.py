@@ -40,7 +40,7 @@ class TeamMember(BaseModel):
     name: Annotated[str,
                     Field(..., description="Full name of the team member")]
     role: Annotated[str,
-                    Field(..., description="Role in the team (e.g., Frontend Developer)")]
+                    Field(..., description="Role in the team")]
     photo: Annotated[str,
                      Field(..., description="URL to the team member's photo")]
     linkedin: Annotated[AnyUrl, Field(..., description="LinkedIn profile URL")]

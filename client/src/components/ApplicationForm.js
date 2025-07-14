@@ -3,6 +3,7 @@ import './ApplicationForm.css';
 import { Form, FormGroup, Label, Input, Button, Alert } from 'reactstrap';
 import axios from 'axios';
 import ApplicationResponse from './ApplicationResponse';
+import { submitApplication } from '../services/api';
 
 function ApplicationForm({ job }) {
     const [modal, setModal] = useState(false);
@@ -32,7 +33,7 @@ function ApplicationForm({ job }) {
         setSubmitError(null);
 
         try {
-            const response = await submitApplication(job, formData);
+            const response = await submitApplication(job, formData, job.id);
 
             if (response.success) {
                 // Simulate ML review (replace with actual API response)
@@ -110,7 +111,7 @@ function ApplicationForm({ job }) {
                     />
                 </FormGroup>
 
-                <FormGroup>
+                {/* <FormGroup>
                     <Label for="coverLetter">Cover Letter (Optional)</Label>
                     <Input
                         id="coverLetter"
@@ -119,7 +120,7 @@ function ApplicationForm({ job }) {
                         value={formData.coverLetter}
                         onChange={handleChange}
                     />
-                </FormGroup>
+                </FormGroup> */}
 
                 <FormGroup>
                     <Label for="resumeFile">Upload Resume (PDF/DOCX)</Label>

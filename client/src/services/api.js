@@ -53,7 +53,7 @@ export const fetchJobs = async () => {
 export const fetchJobById = async (id) => {
     try {
         // In a real app:
-        const response = await axios.get(`${API_BASE_URL}/jobs/${id}`);
+        const response = await axios.get(`${API_BASE_URL}/apply/${id}`);
         console.log(response.data)
         return response.data;
 
@@ -62,7 +62,7 @@ export const fetchJobById = async (id) => {
     }
 };
 
-export const submitApplication = async (job, formData) => {
+export const submitApplication = async (job, formData, id) => {
     try {
         const payload = new FormData();
 
@@ -78,7 +78,7 @@ export const submitApplication = async (job, formData) => {
         payload.append('resume', formData.resume);
 
         const response = await axios.post(
-            `${API_BASE_URL}/api/applications`,
+            `${API_BASE_URL}/apply/${id}`,
             payload,
             {
                 headers: {
@@ -92,6 +92,7 @@ export const submitApplication = async (job, formData) => {
                 }
             }
         );
+        console.log(response)
 
         return response.data;
 
