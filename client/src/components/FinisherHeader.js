@@ -4,13 +4,11 @@ const FinisherHeader = () => {
     const headerRef = useRef(null);
 
     useEffect(() => {
-        // Dynamically load the script
         const script = document.createElement('script');
         script.src = `${process.env.PUBLIC_URL}/finisher-header.es5.min.js`;
         script.async = true;
 
         script.onload = () => {
-            // Initialize after script loads
             if (window.FinisherHeader) {
                 new window.FinisherHeader({
                     count: 6,
@@ -34,7 +32,6 @@ const FinisherHeader = () => {
         document.body.appendChild(script);
 
         return () => {
-            // Cleanup
             document.body.removeChild(script);
         };
     }, []);
@@ -45,11 +42,9 @@ const FinisherHeader = () => {
             className="finisher-header"
             style={{
                 width: '100%',
-                // height: '300px',
                 position: 'absolute'
             }}
         >
-            {/* Your header content (logo, nav, etc.) */}
         </div>
     );
 };

@@ -28,7 +28,6 @@ function Home() {
                             threshold={0.1}
                             rootMargin="-100px"
                             textAlign="center"
-                        // onLetterAnimationComplete={handleAnimationComplete}
                         />
                         <Button color="primary" outline>Download Report</Button>
                     </h2>

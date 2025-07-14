@@ -7,11 +7,6 @@ import DecryptedText from '../Animation/DecryptedText'
 
 function Jobs() {
 
-    // useEffect(() => {
-    //     fetch("http://localhost:8000/jobs")
-    //         .then(res => res.json())
-    //         .then(data => console.log(data));
-    // }, []);
     const [jobs, setJobs] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -55,32 +50,11 @@ function Jobs() {
                 />
             </h2>
             <Container fluid className='job-list'>
-                {/* <Row> */}
-                {/* <Col> */}
-                {/* <div className="job-list"> */}
 
                 {jobs.map(job => (
-                    // <JobCard key={job.id} job={job} isOpen={isOpen} toggle={toggle} />
                     <JobCard key={job.id} job={job} />
                 ))}
-                {/* </div> */}
-                {/* </Col> */}
-                {/* <Col xs='8'>
-                    <div>
-                        {jobs.map(job => (
-                            <div className="toggle" >
-                                <Card>
-                                    <CardBody>
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-                                        terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
-                                        labore wes anderson cred nesciunt sapiente ea proident.
-                                    </CardBody>
-                                </Card>
-                            </div>
-                        ))}
-                    </div>
-                </Col> */}
-                {/* </Row> */}
+
             </Container>
         </div>
 

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import './ApplicationForm.css';
 import { Form, FormGroup, Label, Input, Button, Alert } from 'reactstrap';
-import axios from 'axios';
 import ApplicationResponse from './ApplicationResponse';
 import { submitApplication } from '../services/api';
 
@@ -10,6 +9,9 @@ function ApplicationForm({ job }) {
     const [status, setStatus] = useState(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitError, setSubmitError] = useState(null);
+    const [missingSkills, setMissingSkills] = useState([]);
+    const [feedback, setFeedback] = useState('');
+
 
     const [formData, setFormData] = useState({
         name: '',
@@ -34,14 +36,16 @@ function ApplicationForm({ job }) {
 
         try {
             const response = await submitApplication(job, formData, job.id);
+            console.log("response====", response)
 
-            if (response.success) {
-                // Simulate ML review (replace with actual API response)
-                const isAccepted = Math.random() > 0.5;
-                setStatus(isAccepted ? 'accepted' : 'rejected');
+            if (response?.status == 200) {
+                // const isAccepted = Math.random() > 0.5;
+                console.log('working')
+                setStatus(response?.data?.status);
                 setModal(true);
+                setMissingSkills(response?.data?.missing_skills)
+                setFeedback(response?.data?.feedback)
 
-                // Reset form
                 setFormData({
                     name: '',
                     email: '',
@@ -111,16 +115,6 @@ function ApplicationForm({ job }) {
                     />
                 </FormGroup>
 
-                {/* <FormGroup>
-                    <Label for="coverLetter">Cover Letter (Optional)</Label>
-                    <Input
-                        id="coverLetter"
-                        name="coverLetter"
-                        type="textarea"
-                        value={formData.coverLetter}
-                        onChange={handleChange}
-                    />
-                </FormGroup> */}
 
                 <FormGroup>
                     <Label for="resumeFile">Upload Resume (PDF/DOCX)</Label>
@@ -149,6 +143,8 @@ function ApplicationForm({ job }) {
                 toggle={toggle}
                 status={status}
                 jobTitle={job.title}
+                missingSkills={missingSkills}
+                feedback={feedback.split('\n')}
             />
         </div>
     );

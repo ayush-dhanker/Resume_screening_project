@@ -94,12 +94,11 @@ export const ChromaGrid = ({
                     key={job.id}
                     className="chroma-card"
                     onMouseMove={handleCardMove}
-                    // onClick={() => handleCardClick(c.url)}
                     style={
                         {
                             "--card-border": items[i].borderColor || "transparent",
                             "--card-gradient": items[i].gradient
-                            // cursor: c.url ? "pointer" : "default",
+
                         }
                     }
                 >

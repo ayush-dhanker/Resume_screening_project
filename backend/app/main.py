@@ -12,7 +12,7 @@ from datetime import date, datetime, timezone
 from models import Job, Applicant, TeamMember
 from fastapi.middleware.cors import CORSMiddleware
 
-from backend.model2 import evaluate_resume
+from backend.model import evaluate_resume
 
 app = FastAPI()
 

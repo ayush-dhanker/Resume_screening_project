@@ -41,13 +41,6 @@ function JobCard({ job }) {
             </div>
 
         </div >
-        // <div className="job-card">
-        //     <h3>{job.title}</h3>
-        //     <p><strong>Company:</strong> {job.company}</p>
-        //     <p><strong>Location:</strong> {job.location}</p>
-        //     <p><strong>Salary:</strong> {job.salary}</p>
-        //     <Link to={`/apply/${job.id}`} className="apply-button">Apply Now</Link>
-        // </div>
     );
 }
 

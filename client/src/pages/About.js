@@ -1,7 +1,6 @@
 import './About.css';
 import React, { useEffect, useState } from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import ProfileCard from '../components/ProfileCard';
 import SplitText from '../Animation/SplitText';
 import DecryptedText from '../Animation/DecryptedText';
 import { fetchTeamMeambers } from '../services/api';
@@ -45,7 +44,6 @@ function About() {
                     threshold={0.1}
                     rootMargin="-100px"
                     textAlign="center"
-                // onLetterAnimationComplete={handleAnimationComplete}
                 />
             </h1>
             <p>

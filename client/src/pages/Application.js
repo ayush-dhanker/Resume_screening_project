@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ApplicationForm from '../components/ApplicationForm';
 import { fetchJobById } from '../services/api';
-// import './Application.css';
 
 function Application() {
     const { jobId } = useParams();

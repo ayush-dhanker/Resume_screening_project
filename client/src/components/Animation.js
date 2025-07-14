@@ -5,7 +5,7 @@ import './Animation.css'
 const GridAnimation = () => {
     const gridRef = useRef(null);
 
-    const grid = [11, 6]; // 11 columns, 4 rows
+    const grid = [11, 6];
     const totalSquares = grid[0] * grid[1];
 
     const animateGrid = () => {
